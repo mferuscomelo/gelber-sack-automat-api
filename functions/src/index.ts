@@ -1,8 +1,8 @@
 import * as functions from 'firebase-functions';
 import admin = require('firebase-admin');
 import express = require('express');
+import cors = require('cors');
 // import parse = require('body-parser');
-// import cors = require('cors');
 
 interface Card {
     id: string,
@@ -15,7 +15,7 @@ const db = admin.firestore();
 
 const app = express();
 
-// app.use(cors({origin: true}));
+app.use(cors({origin: true}));
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 
